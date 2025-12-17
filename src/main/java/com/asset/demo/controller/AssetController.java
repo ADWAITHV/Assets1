@@ -1,8 +1,10 @@
-package com.asset.demo;
+package com.asset.demo.controller;
 
 
+import com.asset.demo.dto.UserRequestDto;
+import com.asset.demo.entity.AssetEntity;
+import com.asset.demo.service.AssetService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,16 +20,16 @@ public class AssetController {
     private AssetService assetService;
 
 
-    @GetMapping("/auth/login")
+    @PostMapping("/auth/login")
 
-    public String login(@RequestParam Long userName,@RequestParam String password){
+    public String login(@RequestBody UserRequestDto userRequestDto){
 
-        return assetService.login(userName,password);
+        return assetService.login(userRequestDto);
 
 
 
     }
-    @GetMapping("/auth/logout")
+    @PostMapping("/auth/logout")
 
     public String logout(){
 

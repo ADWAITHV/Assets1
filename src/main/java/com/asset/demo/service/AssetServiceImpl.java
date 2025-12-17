@@ -1,5 +1,9 @@
-package com.asset.demo;
+package com.asset.demo.service;
 
+import com.asset.demo.dto.UserRequestDto;
+import com.asset.demo.repository.AssetRepo;
+import com.asset.demo.repository.UserRepo;
+import com.asset.demo.entity.AssetEntity;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,9 +23,9 @@ public class AssetServiceImpl implements AssetService {
 
 
     @Override
-    public String login(Long userName, String password) {
+    public String login(UserRequestDto userRequestDto) {
 
-        Optional optional= userRepo.login(userName,password);
+        Optional optional= userRepo.login(userRequestDto.getUserName(),userRequestDto.getPassword());
         if(optional.isEmpty())
 
             return "Login failed";

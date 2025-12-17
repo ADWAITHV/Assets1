@@ -1,9 +1,8 @@
-package com.asset.demo;
+package com.asset.demo.service;
 
 
-import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
+import com.asset.demo.dto.UserRequestDto;
+import com.asset.demo.entity.AssetEntity;
 
 import java.util.List;
 import java.util.Optional;
@@ -11,7 +10,7 @@ import java.util.Optional;
 
 public interface AssetService {
 
-    String login(Long userName,String password);
+    String login(UserRequestDto userRequestDto);
 
     String createAssets(AssetEntity assetEntity);
 
