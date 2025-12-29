@@ -22,6 +22,8 @@ public interface AssetService {
 
     String deleteAssets(Long id);
 
+    String login(String name,String pass,String ip);
+
 
 
 

@@ -65,6 +65,14 @@ public class AssetController {
     }
 
 
+    @GetMapping("/api/login/{ip}")
+    public String login(@RequestParam String name,@RequestParam String pass,@PathVariable String ip){
+        return assetService.login(name,pass,ip);
+
+
+    }
+
+
 
 
 
